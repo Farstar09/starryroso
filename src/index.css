@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  @apply bg-black text-white font-sans;
+}
+
+@keyframes red-glitch {
+  0% { transform: translate(0, 0); text-shadow: 0 0 12px rgba(255,0,0,0.9); }
+  15% { transform: translate(-2px, 1px); text-shadow: -2px 0 8px rgba(255,0,0,0.9); }
+  30% { transform: translate(2px, -1px); text-shadow: 2px 0 12px rgba(255,0,0,1); }
+  45% { transform: translate(-1px, -2px); text-shadow: -3px 0 10px rgba(255,0,0,0.8); }
+  60% { transform: translate(1px, 2px); text-shadow: 3px 0 16px rgba(255,0,0,1); }
+  75% { transform: translate(-2px, 0); text-shadow: -2px 0 10px rgba(255,0,0,0.9); }
+  100% { transform: translate(0, 0); text-shadow: 0 0 10px rgba(255,0,0,0.9); }
+}
+
+.glitch-text {
+  animation: red-glitch 0.5s infinite;
+}
+
+.glitch-on-hover:hover {
+  animation: red-glitch 0.5s infinite;
+}
+
+.nav-blur {
+  backdrop-filter: blur(12px);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(30, 0, 0, 0.9)
+  );
+}
+
+::selection {
+  background: rgba(255,0,0,0.7);
+  color: #fff;
+}
